@@ -1,3 +1,4 @@
+import PlayerData from "./components/PlayerData";
 import TokenSidebar from "./components/TokenSidebar";
 
 const App = () => {
@@ -10,10 +11,36 @@ const App = () => {
     { name: 'Leather', quantities: [1, 1, 1, 1, 1, 1, 2, 3, 4] },
   ];
 
+  const player1 = {
+    name: 'Player 1',
+    tokens: [
+      { name: 'Diamond', quantities: [] },
+      { name: 'Gold', quantities: [] },
+      { name: 'Silver', quantities: [] },
+      { name: 'Cloth', quantities: [] },
+      { name: 'Spice', quantities: [] },
+      { name: 'Leather', quantities: [] },
+    ],
+  };
+
+  const player2 = {
+    name: 'Player 2',
+    tokens: [
+      { name: 'Diamond', quantities: [] },
+      { name: 'Gold', quantities: [] },
+      { name: 'Silver', quantities: [] },
+      { name: 'Cloth', quantities: [] },
+      { name: 'Spice', quantities: [] },
+      { name: 'Leather', quantities: [] },
+    ],
+  };
+
   return (
     <>
       <h1>Jaipur</h1>
       <TokenSidebar tokenRows={tokensRemaining} />
+      <PlayerData player={player1} />
+      <PlayerData player={player2} />
     </>
   )
 }
