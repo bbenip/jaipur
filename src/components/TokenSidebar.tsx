@@ -1,7 +1,7 @@
 import TokenBar from "./TokenBar";
 
 type TokenSidebarProps = {
-  tokenRows: { name: string; quantities: number[] }[];
+  tokenRows: { name: string; values: number[] }[];
 };
 
 const TokenSidebar = ({ tokenRows }: TokenSidebarProps) => (

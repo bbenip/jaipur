@@ -1,14 +1,14 @@
 type TokenBarProps = {
-  tokenRow: { name: string; quantities: number[] };
+  tokenRow: { name: string; values: number[] };
 };
 
 const TokenBar = ({ tokenRow }: TokenBarProps) => {
   const tokenName = tokenRow.name;
-  const tokenQuantities = tokenRow.quantities;
+  const tokenValues = tokenRow.values;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      {tokenQuantities.map((quantity, index) => (
+      {tokenValues.map((value, index) => (
         <div
           key={index}
           style={{
@@ -18,8 +18,8 @@ const TokenBar = ({ tokenRow }: TokenBarProps) => {
           }}
         >
           <img
-            src={`/src/assets/resource_tokens/${tokenName}_token_${quantity}.webp`}
-            alt={`${tokenName}-${quantity}`}
+            src={`/src/assets/resource_tokens/${tokenName}_token_${value}.webp`}
+            alt={`${tokenName}-${value}`}
             style={{ height: '8vh', width: '8vh' }}
           />
         </div>

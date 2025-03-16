@@ -8,7 +8,7 @@ type PlayerDataProps = {
     resources: string[];
     tokens: {
       name: string;
-      quantities: number[];
+      values: number[];
     }[];
   };
 };

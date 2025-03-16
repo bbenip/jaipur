@@ -6,12 +6,12 @@ import TokenSidebar from "./components/TokenSidebar";
 
 const App = () => {
   const tokensRemaining = [
-    { name: 'diamond', quantities: [5, 5, 5, 7, 7] },
-    { name: 'gold', quantities: [5, 5, 5, 6, 6] },
-    { name: 'silver', quantities: [5, 5, 5, 5, 5] },
-    { name: 'cloth', quantities: [1, 1, 2, 2, 3, 3, 5] },
-    { name: 'spice', quantities: [1, 1, 2, 2, 3, 3, 5] },
-    { name: 'leather', quantities: [1, 1, 1, 1, 1, 1, 2, 3, 4] },
+    { name: 'diamond', values: [5, 5, 5, 7, 7] },
+    { name: 'gold', values: [5, 5, 5, 6, 6] },
+    { name: 'silver', values: [5, 5, 5, 5, 5] },
+    { name: 'cloth', values: [1, 1, 2, 2, 3, 3, 5] },
+    { name: 'spice', values: [1, 1, 2, 2, 3, 3, 5] },
+    { name: 'leather', values: [1, 1, 1, 1, 1, 1, 2, 3, 4] },
   ];
 
   const player1 = {
@@ -19,12 +19,12 @@ const App = () => {
     isMainPlayer: true,
     resources: [],
     tokens: [
-      { name: 'diamond', quantities: [] },
-      { name: 'gold', quantities: [] },
-      { name: 'silver', quantities: [] },
-      { name: 'cloth', quantities: [] },
-      { name: 'spice', quantities: [] },
-      { name: 'leather', quantities: [] },
+      { name: 'diamond', values: [] },
+      { name: 'gold', values: [] },
+      { name: 'silver', values: [] },
+      { name: 'cloth', values: [] },
+      { name: 'spice', values: [] },
+      { name: 'leather', values: [] },
     ],
   };
 
@@ -33,12 +33,12 @@ const App = () => {
     isMainPlayer: false,
     resources: [],
     tokens: [
-      { name: 'diamond', quantities: [] },
-      { name: 'gold', quantities: [] },
-      { name: 'silver', quantities: [] },
-      { name: 'cloth', quantities: [] },
-      { name: 'spice', quantities: [] },
-      { name: 'leather', quantities: [] },
+      { name: 'diamond', values: [] },
+      { name: 'gold', values: [] },
+      { name: 'silver', values: [] },
+      { name: 'cloth', values: [] },
+      { name: 'spice', values: [] },
+      { name: 'leather', values: [] },
     ],
   };
 
