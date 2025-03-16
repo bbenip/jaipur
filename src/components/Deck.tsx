@@ -8,7 +8,12 @@ const Deck = ({ deck }: DeckProps) => (
 
     <div>
       {deck.map((resource, index) => (
-        <div key={index}>{resource}</div>
+        <div key={index}>
+          <img
+            src={`/src/assets/cards/${resource}_card.png`}
+            alt={resource}
+          />
+        </div>
       ))}
     </div>
   </div>
