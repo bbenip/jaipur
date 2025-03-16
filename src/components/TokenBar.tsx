@@ -2,7 +2,7 @@ type TokenBarProps = {
   tokenRow: { name: string; values: number[] };
 };
 
-const TokenBar = ({ tokenRow }: TokenBarProps) => {
+export const TokenBar = ({ tokenRow }: TokenBarProps) => {
   const tokenName = tokenRow.name;
   const tokenValues = tokenRow.values;
 
@@ -27,5 +27,3 @@ const TokenBar = ({ tokenRow }: TokenBarProps) => {
     </div>
   );
 };
-
-export default TokenBar;

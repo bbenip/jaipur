@@ -4,7 +4,7 @@ type DiscardPileProps = {
   };
 };
 
-const DiscardPile = ({ discardPile }: DiscardPileProps) => {
+export const DiscardPile = ({ discardPile }: DiscardPileProps) => {
   return <div>
     <h2>Discard Pile</h2>
 
@@ -33,5 +33,3 @@ const DiscardPile = ({ discardPile }: DiscardPileProps) => {
     </div>
   </div>;
 };
-
-export default DiscardPile;

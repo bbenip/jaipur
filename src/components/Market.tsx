@@ -4,7 +4,7 @@ type MarketProps = {
   };
 };
 
-const Market = ({ market }: MarketProps) => {
+export const Market = ({ market }: MarketProps) => {
   return (
     <div>
       <h2>Market</h2>

@@ -3,7 +3,7 @@ type PlayerResourceCardsProps = {
   resources: string[];
 };
 
-const PlayerResourceCards = ({ resources, isMainPlayer }: PlayerResourceCardsProps) => (
+export const PlayerResourceCards = ({ resources, isMainPlayer }: PlayerResourceCardsProps) => (
   <div style={{ display: 'flex', flexDirection: 'row' }}>
     {resources.map((resource, index) => {
       const cardImageSource = isMainPlayer
@@ -34,5 +34,3 @@ const PlayerResourceCards = ({ resources, isMainPlayer }: PlayerResourceCardsPro
     })}
   </div>
 );
-
-export default PlayerResourceCards;

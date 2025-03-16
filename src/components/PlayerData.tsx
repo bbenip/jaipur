@@ -1,5 +1,5 @@
-import TokenSidebar from "./TokenSidebar";
-import PlayerResourceCards from "./PlayerResourceCards";
+import { TokenSidebar } from "./TokenSidebar";
+import { PlayerResourceCards } from "./PlayerResourceCards";
 
 type PlayerDataProps = {
   player: {
@@ -13,12 +13,10 @@ type PlayerDataProps = {
   };
 };
 
-const PlayerData = ({ player }: PlayerDataProps) => (
+export const PlayerData = ({ player }: PlayerDataProps) => (
   <div>
     <h2>{player.name}</h2>
     <PlayerResourceCards resources={player.resources} isMainPlayer={player.isMainPlayer} />
     <TokenSidebar tokenRows={player.tokens} />
   </div>
 );
-
-export default PlayerData;

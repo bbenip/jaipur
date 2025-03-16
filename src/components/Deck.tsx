@@ -2,7 +2,7 @@ type DeckProps = {
   deck: string[];
 };
 
-const Deck = ({ deck }: DeckProps) => (
+export const Deck = ({ deck }: DeckProps) => (
   <div>
     <h2>Deck</h2>
 
@@ -31,5 +31,3 @@ const Deck = ({ deck }: DeckProps) => (
     </div>
   </div>
 );
-
-export default Deck;

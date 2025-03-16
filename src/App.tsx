@@ -1,10 +1,10 @@
-import Deck from "./components/Deck";
-import DiscardPile from "./components/DiscardPile";
-import Market from "./components/Market";
-import PlayerData from "./components/PlayerData";
-import TokenSidebar from "./components/TokenSidebar";
+import { Deck } from "./components/Deck";
+import { DiscardPile } from "./components/DiscardPile";
+import { Market } from "./components/Market";
+import { PlayerData } from "./components/PlayerData";
+import { TokenSidebar } from "./components/TokenSidebar";
 
-const App = () => {
+export const App = () => {
   const tokensRemaining = [
     { name: 'diamond', values: [5, 5, 5, 7, 7] },
     { name: 'gold', values: [5, 5, 5, 6, 6] },
@@ -74,5 +74,3 @@ const App = () => {
     </>
   );
 };
-
-export default App
