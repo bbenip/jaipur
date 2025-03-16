@@ -1,4 +1,5 @@
 import Deck from "./components/Deck";
+import Market from "./components/Market";
 import PlayerData from "./components/PlayerData";
 import TokenSidebar from "./components/TokenSidebar";
 
@@ -54,6 +55,8 @@ const App = () => {
     [deck[i], deck[j]] = [deck[j], deck[i]];
   }
 
+  const market = { resources: [] };
+
   return (
     <>
       <h1>Jaipur</h1>
@@ -61,6 +64,7 @@ const App = () => {
       <PlayerData player={player1} />
       <PlayerData player={player2} />
       <Deck deck={deck} />
+      <Market market={market} />
     </>
   );
 };
