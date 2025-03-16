@@ -10,7 +10,10 @@ const TokenBar = ({ tokenRow }: TokenBarProps) => {
     <div>
       {tokenQuantities.map((quantity, index) => (
         <div key={index}>
-          {tokenName}: {quantity}
+          <img
+            src={`/src/assets/resource_tokens/${tokenName}_token_${quantity}.webp`}
+            alt={`${tokenName}-${quantity}`}
+          />
         </div>
       ))}
     </div>
