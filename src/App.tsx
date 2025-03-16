@@ -16,6 +16,7 @@ const App = () => {
 
   const player1 = {
     name: 'Player 1',
+    isMainPlayer: true,
     resources: [],
     tokens: [
       { name: 'diamond', quantities: [] },
@@ -29,6 +30,7 @@ const App = () => {
 
   const player2 = {
     name: 'Player 2',
+    isMainPlayer: false,
     resources: [],
     tokens: [
       { name: 'diamond', quantities: [] },
