@@ -1,12 +1,13 @@
+import { Player } from "./PlayerData";
+
 type PlayerResourceCardsProps = {
-  isMainPlayer: boolean;
-  resources: string[];
+  player: Player;
 };
 
-export const PlayerResourceCards = ({ resources, isMainPlayer }: PlayerResourceCardsProps) => (
+export const PlayerResourceCards = ({ player }: PlayerResourceCardsProps) => (
   <div style={{ display: 'flex', flexDirection: 'row' }}>
-    {resources.map((resource, index) => {
-      const cardImageSource = isMainPlayer
+    {player.resources.map((resource, index) => {
+      const cardImageSource = player.isMainPlayer
         ? `/src/assets/cards/${resource}_card.png`
         : `/src/assets/cards/back_card.png`;
 

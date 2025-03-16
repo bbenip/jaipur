@@ -1,10 +1,15 @@
-type TokenBarProps = {
-  tokenRow: { name: string; values: number[] };
+export type Token = {
+  name: string;
+  values: number[];
 };
 
-export const TokenBar = ({ tokenRow }: TokenBarProps) => {
-  const tokenName = tokenRow.name;
-  const tokenValues = tokenRow.values;
+type TokenBarProps = {
+  token: Token;
+};
+
+export const TokenBar = ({ token }: TokenBarProps) => {
+  const tokenName = token.name;
+  const tokenValues = token.values;
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>

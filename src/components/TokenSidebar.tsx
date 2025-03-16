@@ -1,13 +1,13 @@
-import { TokenBar } from "./TokenBar";
+import { Token, TokenBar } from "./TokenBar";
 
 type TokenSidebarProps = {
-  tokenRows: { name: string; values: number[] }[];
+  tokens: Token[];
 };
 
-export const TokenSidebar = ({ tokenRows }: TokenSidebarProps) => (
+export const TokenSidebar = ({ tokens }: TokenSidebarProps) => (
   <div>
-    {tokenRows.map((tokenRow) => (
-      <TokenBar key={tokenRow.name} tokenRow={tokenRow} />
+    {tokens.map((token) => (
+      <TokenBar key={token.name} token={token} />
     ))}
   </div>
 );

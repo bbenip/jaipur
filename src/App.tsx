@@ -65,7 +65,7 @@ export const App = () => {
     <>
       <h1>Jaipur</h1>
 
-      <TokenSidebar tokenRows={tokensRemaining} />
+      <TokenSidebar tokens={tokensRemaining} />
       <PlayerData player={player1} />
       <PlayerData player={player2} />
       <Deck deck={deck} />
