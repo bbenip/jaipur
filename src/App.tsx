@@ -1,4 +1,5 @@
 import Deck from "./components/Deck";
+import DiscardPile from "./components/DiscardPile";
 import Market from "./components/Market";
 import PlayerData from "./components/PlayerData";
 import TokenSidebar from "./components/TokenSidebar";
@@ -56,15 +57,18 @@ const App = () => {
   }
 
   const market = { resources: [] };
+  const discardPile = { resources: [] };
 
   return (
     <>
       <h1>Jaipur</h1>
+
       <TokenSidebar tokenRows={tokensRemaining} />
       <PlayerData player={player1} />
       <PlayerData player={player2} />
       <Deck deck={deck} />
       <Market market={market} />
+      <DiscardPile discardPile={discardPile} />
     </>
   );
 };
