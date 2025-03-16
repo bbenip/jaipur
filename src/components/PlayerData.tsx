@@ -1,5 +1,5 @@
 import TokenSidebar from "./TokenSidebar";
-import ResourceCards from "./ResourceCards";
+import PlayerResourceCards from "./PlayerResourceCards";
 
 type PlayerDataProps = {
   player: {
@@ -15,7 +15,7 @@ type PlayerDataProps = {
 const PlayerData = ({ player }: PlayerDataProps) => (
   <div>
     <h2>{player.name}</h2>
-    <ResourceCards resources={player.resources} />
+    <PlayerResourceCards resources={player.resources} />
     <TokenSidebar tokenRows={player.tokens} />
   </div>
 );
