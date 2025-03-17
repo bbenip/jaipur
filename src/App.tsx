@@ -8,6 +8,8 @@ import { Token } from "./components/TokenBar";
 import { TokenSidebar } from "./components/TokenSidebar";
 
 export const App = () => {
+  const [isPlayer1Turn] = useState<boolean>(true);
+
   const [tokensRemaining] = useState<Token[]>([
     { name: 'diamond', values: [5, 5, 5, 7, 7] },
     { name: 'gold', values: [5, 5, 5, 6, 6] },
@@ -19,7 +21,7 @@ export const App = () => {
 
   const [player1] = useState<Player>({
     name: 'Player 1',
-    isMainPlayer: true,
+    isMainPlayer: isPlayer1Turn,
     resources: [],
     tokens: [
       { name: 'diamond', values: [] },
@@ -33,7 +35,7 @@ export const App = () => {
 
   const [player2] = useState<Player>({
     name: 'Player 2',
-    isMainPlayer: false,
+    isMainPlayer: !isPlayer1Turn,
     resources: [],
     tokens: [
       { name: 'diamond', values: [] },
