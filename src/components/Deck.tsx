@@ -1,13 +1,13 @@
 type DeckProps = {
-  deck: string[];
+  resources: string[];
 };
 
-export const Deck = ({ deck }: DeckProps) => (
+export const Deck = ({ resources }: DeckProps) => (
   <div>
     <h2>Deck</h2>
 
     <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
-      {deck.map((resource, index) => (
+      {resources.map((resource, index) => (
         <div
           key={index}
           style={{

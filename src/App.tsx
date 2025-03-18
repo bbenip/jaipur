@@ -8,7 +8,7 @@ import { Token } from "./components/TokenBar";
 import { TokenSidebar } from "./components/TokenSidebar";
 
 export const App = () => {
-  const [isPlayer1Turn] = useState<boolean>(true);
+  const [isPlayer1Turn, setIsPlayer1Turn] = useState<boolean>(true);
 
   const [tokensRemaining] = useState<Token[]>([
     { name: 'diamond', values: [5, 5, 5, 7, 7] },
@@ -19,7 +19,7 @@ export const App = () => {
     { name: 'leather', values: [1, 1, 1, 1, 1, 1, 2, 3, 4] },
   ]);
 
-  const [player1] = useState<Player>({
+  const [player1, setPlayer1] = useState<Player>({
     name: 'Player 1',
     isMainPlayer: isPlayer1Turn,
     resources: [],
@@ -33,7 +33,7 @@ export const App = () => {
     ],
   });
 
-  const [player2] = useState<Player>({
+  const [player2, setPlayer2] = useState<Player>({
     name: 'Player 2',
     isMainPlayer: !isPlayer1Turn,
     resources: [],
@@ -47,7 +47,7 @@ export const App = () => {
     ],
   });
 
-  const [deck] = useState<string[]>([
+  const [resourceDeck, setResourceDeck] = useState<string[]>([
     ...Array(6).fill('diamond'),
     ...Array(6).fill('gold'),
     ...Array(6).fill('silver'),
@@ -58,13 +58,45 @@ export const App = () => {
   ]);
 
   // Fisher-Yates shuffle
-  for (let i = deck.length - 1; i > 0; i--) {
+  for (let i = resourceDeck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [deck[i], deck[j]] = [deck[j], deck[i]];
+    [resourceDeck[i], resourceDeck[j]] = [resourceDeck[j], resourceDeck[i]];
   }
 
   const [market] = useState<{ resources: string[] }>({ resources: [] });
   const [discardPile] = useState<{ resources: string[] }>({ resources: [] });
+
+  const toggleTurn = () => {
+    setIsPlayer1Turn((currentValue) => !currentValue);
+  };
+
+  const addResourceToPlayer = (
+    setPlayer: React.Dispatch<React.SetStateAction<Player>>,
+    resource: string,
+  ) => {
+    setPlayer((currentPlayer: Player) => ({
+      ...currentPlayer,
+      resources: [...currentPlayer.resources, resource],
+    }));
+  };
+
+  const removeResourceFromDeck = () => {
+    setResourceDeck((currentDeck) => currentDeck.slice(0, -1));
+  };
+
+  const takeResourceFromDeck = () => {
+    if (resourceDeck.length === 0) {
+      return;
+    }
+
+    const setPlayer = isPlayer1Turn ? setPlayer1 : setPlayer2;
+    const resource = resourceDeck[resourceDeck.length - 1];
+
+    addResourceToPlayer(setPlayer, resource);
+    removeResourceFromDeck();
+
+    toggleTurn();
+  };
 
   return (
     <>
@@ -73,9 +105,11 @@ export const App = () => {
       <TokenSidebar tokens={tokensRemaining} />
       <PlayerData player={player1} />
       <PlayerData player={player2} />
-      <Deck deck={deck} />
+      <Deck resources={resourceDeck} />
       <Market market={market} />
       <DiscardPile discardPile={discardPile} />
+
+      <button onClick={takeResourceFromDeck}>Take resource from deck</button>
     </>
   );
 };
